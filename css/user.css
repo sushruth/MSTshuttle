@@ -28,6 +28,10 @@ html, body {
 	outline: 0;
 }
 
+.input[type='password'] {
+	text-transform:none;
+}
+
 .input::-webkit-input-placeholder {
    color: rgba(255,255,255,0.5);
 }
