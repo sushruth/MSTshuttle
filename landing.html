@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+    <title>Missouri S&amp;T Shuttle app</title>
+    <meta content="The HTML5 Herald" name="description">
+    <meta content="SitePoint" name="author">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
+    <link href="css/user.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE1ch_06Mx33PxOonD9xXiZsX7EU07kvM&sensor=true"></script>
+	<script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(37.9537087,-91.7714993),
+          zoom: 16,
+			disableDefaultUI: true
+        };
+        var map = new google.maps.Map(document.getElementById("map"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+		$(document).ready(function(){
+			//setTimeout('execute()', 1000);
+		});
+		function execute() {
+			$(".error").slideDown(100);
+		}
+    </script>
+</head>
+<body>
+	
+	<div id="header" class="inlineparent">
+		<img src="img/logo.png" style="width:0.5in;" />
+		<div id="headerright">
+			<div id="welcome">Welcome, <b>Sushruth Sastry</b></div>
+			<div id="usercontrol">
+				<a href="#">my rides</a> | <a href="#">logout</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="content">
+		<div id="form">
+			<div class="error">Error</div>
+			<div id="formcontent">
+				<div class="small-heading" style="margin-left:-0.25in;">Request a ride</div>
+				<div class="cellparent" style="width:100%;margin-top:0.15in;overflow:hidden;box-sizing:border-box;">
+					<input type="text" class="input" placeholder="FROM" style="margin:0;" />
+					<div class="map">&nbsp;</div>
+				</div>
+				<div class="cellparent" style="width:100%;margin-top:0.15in;overflow:hidden;">
+					<input type="text" class="input" placeholder="TO" style="margin:0;" />
+					<div class="map">&nbsp;</div>
+				</div>
+				<div id="number" class="inlineparent">
+					<div id="dec">-</div><div id="disp">2</div><div id="inc">+</div>
+				</div>
+				<input type="button" style="margin-top:-0.38in;" value="GO" class="button" />
+			</div>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<div class="small-heading" style="padding:0.1in;border-bottom:0.05in solid rgba(0,0,0,0.3);">The shuttle is now here</div>
+		<div id="map">
+			
+		</div>
+	</div>
+	
+    <script src="js/scripts.js"></script>
+</body>
+</html>
